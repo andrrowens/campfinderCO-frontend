@@ -8,7 +8,8 @@ const CampsiteForm = ({ setCampsites, setMessage }) => {
     region: "",
     description: "",
     elevation: "",
-    coordinates: ""
+    coordinates: "",
+    image: ""
   })
 
   const handleChange = (e) => {
@@ -46,7 +47,8 @@ const handleSubmit = (e) => {
           region: "",
           description: "",
           elevation: "",
-          coordinates: ""
+          coordinates: "",
+          image: ""
         })
 }
 
@@ -73,6 +75,10 @@ const handleSubmit = (e) => {
 
           <div>
               <input className="user-input" type="text" name="coordinates" placeholder='Coordinates:' onChange={handleChange} value={newCampsite.coordinates} required/>
+          </div>
+
+          <div>
+              <input className="user-input" type="text" name="image" placeholder='Image URL:' onChange={handleChange} value={newCampsite.image} required/>
           </div>
 
           

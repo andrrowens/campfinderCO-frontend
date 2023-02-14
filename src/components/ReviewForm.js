@@ -55,23 +55,23 @@ const ReviewForm = ({ setMessage, setReviews }) => {
             <form className="form" onSubmit={handleSubmit}>
                 <h2 className="form-title"> &#127957; Create your Review &#127957;</h2>
                 <div>
-                    <input className="user-input" type="text" name="campsite" placeholder='Campsite:' onChange={handleChange} value={newReview.name} />
+                    <input className="user-input" type="text" name="campsite" placeholder='Campsite:' onChange={handleChange} value={newReview.name} required />
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="title" placeholder='Title:' onChange={handleChange} value={newReview.review} />
+                    <input className="user-input" type="text" name="title" placeholder='Title:' onChange={handleChange} value={newReview.review} required />
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="date" placeholder='Date:' onChange={handleChange} value={newReview.review} />
+                    <input className="user-input" type="text" name="date" placeholder='Date:' onChange={handleChange} value={newReview.review} required />
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="content" placeholder='Content:' onChange={handleChange} value={newReview.review} />
+                    <input className="user-input" type="text" name="content" placeholder='Content:' onChange={handleChange} value={newReview.review} required />
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="image" placeholder='Image:' onChange={handleChange} value={newReview.review} />
+                    <input className="user-input" type="text" name="image" placeholder='Image URL:' onChange={handleChange} value={newReview.review} required />
                 </div>
 
                 <input className="submit-btn" type="submit" value="Submit Review" />
