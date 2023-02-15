@@ -8,7 +8,7 @@ import { useEffect } from "react";
             setMessage("")
         }, 5000);
         return () => clearTimeout(timer);
-      }, [message]);
+      }, [setMessage]);
 
     return(
 

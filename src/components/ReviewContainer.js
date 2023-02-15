@@ -1,6 +1,6 @@
 import React from "react";
 import ReviewCard from "./ReviewCard";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 // import ReviewForm from "./ReviewForm";
 
 

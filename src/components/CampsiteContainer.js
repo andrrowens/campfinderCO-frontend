@@ -10,7 +10,7 @@ const CampsiteContainer = ({campsites, setCampsites}) => {
     
     return (
         <div>
-        <h2 className="campsite-header">Campsites!</h2>
+        <h2 className="campsite-header">Colorado Campsites</h2>
             <div> 
                 {mappedCampsites}
             </div>
