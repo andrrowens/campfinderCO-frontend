@@ -5,6 +5,7 @@ const CampsiteCard = ({ id, name, region, description, elevation, coordinates, i
     return (
         <>
             <div className="camp-box">
+                <p>{id} </p>
                 <p className="camp-name">Name: {name}</p>
                 <p className="camp-region">Region: {region}</p>
                 <p className="camp-description">Description: {description}</p>

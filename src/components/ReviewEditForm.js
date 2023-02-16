@@ -17,7 +17,7 @@ const ReviewEditForm = ({ id, campsite, title, date, content, image, setReviews,
 
     const handleEditReview = (e) => {
         e.preventDefault()
-        fetch(`http://localhost:4000/reviews/${id}`,
+        fetch(`/reviews/${id}`,
         {
             method: "PATCH",
             headers: {
@@ -56,7 +56,7 @@ const ReviewEditForm = ({ id, campsite, title, date, content, image, setReviews,
             <input className="user-input" placeholder="Date" type="text" name="date" value={editReview.date} onChange={handleChange} /> 
             <input className="user-input" placeholder="Content" type="text" name="content" value={editReview.content} onChange={handleChange} /> 
             <input className="user-input" placeholder="Image" type="text" name="image" value={editReview.image} onChange={handleChange} /> 
-            <input className="rev-btn" type="submit" value="Update!" />
+            <input className="rev-btn" type="submit" value="Update Review" />
         </form>
     )
 }

@@ -1,23 +1,21 @@
 import React from 'react';
 import '../App.css';
+import { useContext } from 'react';
 import { useEffect, useState } from 'react';
-
-import Navbar from './Navbar';
 import { Route, Switch } from 'react-router-dom';
-// import { Switch } from "react";
-
+import Navbar from './Navbar';
 import CampsiteContainer from './CampsiteContainer';
 import CampsiteForm from './CampsiteForm';
 import Header from './Header';
 import ReviewContainer from './ReviewContainer';
 import ReviewForm from './ReviewForm';
-import ReviewEditForm from './ReviewEditForm';
-import ReviewDelete from './ReviewDelete';
+// import ReviewEditForm from './ReviewEditForm';
+// import ReviewDelete from './ReviewDelete';
 import Notification from './Notification';
 // import UserForm from './UserForm';
+// import { UserContext } from './UserContext';
 import Login from './Login';
-
-
+import Signup from './Signup';
 
 
 function App() {
@@ -25,13 +23,16 @@ function App() {
 const [campsites, setCampsites] = useState([])
 const [reviews, setReviews]= useState([])
 const [message, setMessage]= useState("")
-const [user, setUser] = useState(null);
+// const {fetchCurrentUser, user, setUser} = useContext(userContext)
+
+// const [user, setUser] = useState(null);
+
 
 
 useEffect(() => { // fetch campsites
   const fetchCampsites = async () => {
     try {
-      const resp = await fetch("http://localhost:4000/campsites")
+      const resp = await fetch("/campsites")
       const data = await resp.json()
       setCampsites(data)
     } catch (error) {
@@ -44,7 +45,7 @@ useEffect(() => { // fetch campsites
 useEffect(() => { // fetch reviews
   const fetchReviews = async () => {
     try {
-      const resp = await fetch("http://localhost:4000/reviews")
+      const resp = await fetch("/reviews")
       const data = await resp.json()
       setReviews(data)
     } catch (error) {
@@ -57,7 +58,7 @@ useEffect(() => { // fetch reviews
 
 
 // useEffect(() => {
-//   fetch("/me").then((response) => {
+//   fetch("/authenticated_user").then((response) => {
 //     if (response.ok) {
 //       response.json().then((user) => setUser(user));
 //     }
@@ -73,35 +74,6 @@ useEffect(() => { // fetch reviews
 
 
 
-  // useEffect(() => {
-  //   fetch("/authorized")
-  //     .then(res => {
-  //       if(res.ok) {
-  //         res.json().then(user => {
-  //           setUser(user)
-  //           // fetchCampsites()
-  //         })
-  //       } else {
-  //         res.json().then(() => setUser(null))
-  //       }
-  //     })
-  // }, [])
-  
-
-
-
-// useEffect(() => { // fetch users
-//   const fetchUsers = async () => {
-//     try {
-//       const resp = await fetch("http://localhost:4000/users")
-//       const data = await resp.json()
-//       setUsers(data)
-//     } catch (error) {
-//       alert(error)
-//     }
-//   }
-//   fetchUsers()
-// }, [])
 
 // if (!user) return (
 //   <>
@@ -125,12 +97,20 @@ useEffect(() => { // fetch reviews
             <Route path="/reviews">
               <ReviewForm setMessage={setMessage} setReviews={setReviews} />
               <ReviewContainer setMessage={setMessage} reviews={reviews} setReviews={setReviews} />
-              <ReviewEditForm reviews={reviews} setReviews={setReviews} />
-              <ReviewDelete reviews={reviews} setReviews={setReviews} />
+              {/* <ReviewEditForm reviews={reviews} setReviews={setReviews} />
+              <ReviewDelete reviews={reviews} setReviews={setReviews} /> */}
+            </Route>
+
+            <Route path="/signup">
+                <Signup />
             </Route>
 
             <Route path="/login">
-              <Login user={setUser} setUser={setUser} />
+                <Login /> 
+            </Route>
+
+            <Route path="/authenticated_user">
+              {/* { <AuthenticatedUser /> } */}
             </Route>
 
           </Switch>

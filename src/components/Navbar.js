@@ -2,21 +2,36 @@ import React from 'react';
 // import {Link} from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
 
-const Navbar= () =>{
+const Navbar= (updateUser) => {
+
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    })
+    .then(res =>{
+      if(res.ok){
+        updateUser(null)
+      }
+    })
+  }
+
     return (
     <nav className="nav">
-      {/* <li> */}
+  
         <NavLink exact activeStyle={{ color: "green" }} to="/" className="nav-link">Home</NavLink>
-      {/* </li> */}
-      {/* <li> */}
+     
         <NavLink activeStyle={{ color: "green" }} to="/campsites" className="nav-link">Campsites</NavLink>
-      {/* </li> */}
-      {/* <li> */}
+     
         <NavLink activeStyle={{ color: "green" }} to="/reviews" className="nav-link">Reviews</NavLink>
-      {/* </li> */}
-           {/* <li> */}
-           <NavLink activeStyle={{ color: "green" }} to="/Login" className="nav-link">Login</NavLink>
-      {/* </li> */}
+
+        <NavLink activeStyle={{ color: "green" }} to="/signup" className="nav-link">Sign Up</NavLink>
+
+        <NavLink activeStyle={{ color: "green" }} to="/login" className="nav-link">Login</NavLink>
+     
+        {/* <NavLink activeStyle={{ color: "green" }} to="/logout" className="nav-link">Logout</NavLink> */}
+
+        <header> <button onClick={handleLogout}>Logout</button> </header>
+     
     </nav>
     );
   }

@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const UserCard = () => {
+const UserCard = () => {
   return (
     <div>UserCard</div>
   )
 }
+
+export default UserCard

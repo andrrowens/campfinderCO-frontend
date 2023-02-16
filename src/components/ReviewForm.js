@@ -17,7 +17,7 @@ const ReviewForm = ({ setMessage, setReviews }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-            fetch("http://localhost:/4000/reviews", {
+            fetch("/reviews", {
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json"
@@ -39,7 +39,7 @@ const ReviewForm = ({ setMessage, setReviews }) => {
                
                 
             })
-           
+        
             .catch(error => alert(error))
             setNewReview({
                 campsite: "",
@@ -55,27 +55,26 @@ const ReviewForm = ({ setMessage, setReviews }) => {
             <form className="form" onSubmit={handleSubmit}>
                 <h2 className="form-title"> &#127957; Create your Review &#127957;</h2>
                 <div>
-                    <input className="user-input" type="text" name="campsite" placeholder='Campsite:' onChange={handleChange} value={newReview.name} required />
+                    <input className="user-input" type="text" name="campsite" placeholder='Campsite:' onChange={handleChange} value={newReview.campsite} required />
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="title" placeholder='Title:' onChange={handleChange} value={newReview.review} required />
+                    <input className="user-input" type="text" name="title" placeholder='Title:' onChange={handleChange} value={newReview.title} required />
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="date" placeholder='Date:' onChange={handleChange} value={newReview.review} required />
+                    <input className="user-input" type="text" name="date" placeholder='Date:' onChange={handleChange} value={newReview.date} required />
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="content" placeholder='Content:' onChange={handleChange} value={newReview.review} required />
+                    <input className="user-input" type="text" name="content" placeholder='Content:' onChange={handleChange} value={newReview.content} required />
                 </div>
 
                 <div>
-                    <input className="user-input" type="text" name="image" placeholder='Image URL:' onChange={handleChange} value={newReview.review} required />
+                    <input className="user-input" type="text" name="image" placeholder='Image URL:' onChange={handleChange} value={newReview.image} required />
                 </div>
 
                 <input className="submit-btn" type="submit" value="Submit Review" />
-                
             </form>
         </div>
     )
