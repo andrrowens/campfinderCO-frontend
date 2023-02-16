@@ -42,11 +42,11 @@ const Navbar= (logout, setLogout) => {
 
         <NavLink activeStyle={{ color: "green" }} to="/signup" className="nav-link">Sign Up</NavLink>
 
-        <NavLink activeStyle={{ color: "green" }} to="/login" className="nav-link">Login</NavLink>
+        {/* <NavLink activeStyle={{ color: "green" }} to="/login" className="nav-link">Login</NavLink> */}
 
-        {/* <NavLink activeStyle={{ color: "green" }} to="/authenticated_user" className="nav-link">Login</NavLink> */}
+        <NavLink activeStyle={{ color: "green" }} to="/authenticated_user" className="nav-link">Login</NavLink>
      
-        {/* <NavLink activeStyle={{ color: "green" }} to="/logout" className="nav-link">Logout</NavLink> */}
+        <NavLink activeStyle={{ color: "green" }} to="/logout" className="nav-link">Logout</NavLink>
 
         <header> <button onClick={handleLogout}>Logout</button> </header>
      

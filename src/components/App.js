@@ -14,7 +14,6 @@ import ReviewForm from './ReviewForm';
 import Notification from './Notification';
 // import UserForm from './UserForm';
 // import { UserContext } from './UserContext';
-import Login from './Login';
 import Signup from './Signup';
 import AuthenticatedUser from './AuthenticatedUser';
 
@@ -107,8 +106,8 @@ useEffect(() => { // fetch reviews
                 <Signup />
             </Route>
 
-            <Route path="/login">
-                <Login /> 
+            <Route path="/logout">
+                <Navbar /> 
             </Route>
 
             <Route path="/authenticated_user">
