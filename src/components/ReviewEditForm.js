@@ -1,10 +1,9 @@
 import React from "react"
 import { useState } from "react";
 
-const ReviewEditForm = ({ id, campsite, title, date, content, image, setReviews, handleClick}) => {
+const ReviewEditForm = ({ id, title, date, content, image, setReviews, handleClick}) => {
 
     const [editReview, setEditReview] = useState({
-        campsite: campsite,
         title: title,
         date: date,
         content: content,
@@ -51,7 +50,6 @@ const ReviewEditForm = ({ id, campsite, title, date, content, image, setReviews,
 
     return(
         <form onSubmit={handleEditReview}>
-            <input className="user-input" placeholder="Campsite" type="text" name="campsite" value={editReview.campsite} onChange={handleChange} /> 
             <input className="user-input" placeholder="Title" type="text" name="title" value={editReview.title} onChange={handleChange} /> 
             <input className="user-input" placeholder="Date" type="text" name="date" value={editReview.date} onChange={handleChange} /> 
             <input className="user-input" placeholder="Content" type="text" name="content" value={editReview.content} onChange={handleChange} /> 
