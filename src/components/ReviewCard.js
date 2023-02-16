@@ -25,10 +25,11 @@ const ReviewCard = ({id, title, date, content, image, setReviews}) => {
             <div className="reviewBox">
                 {showForm ? <ReviewEditForm id={id} title={title} date={date} content={content} image={image} setReviews={setReviews} handleClick={handleClick} />:(
                     <div className="reviewCard">
-                     {title} :
-                     {date} :
-                     {content} :
-                     {image} :
+                     <strong>Title: </strong>{title} <br/>
+                     <strong>Date: </strong>{date} <br/>
+                     <strong>Content: </strong>{content} <br/>
+                     {/* <strong>Image: </strong>{image} <br/> */}
+                     <img className="campsite-image" src={image} alt={""}></img> <br/>
                             <button className="form-btn" onClick={handleDeleteReview}> 
                                 DELETE &#10006;
                             </button>
