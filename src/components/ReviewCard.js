@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import ReviewEditForm from "./ReviewEditForm";
 
-const ReviewCard = ({id, campsite, title, date, content, image, setReviews}) => {
+const ReviewCard = ({id, title, date, content, image, setReviews}) => {
 
 
     const [showForm, setShowForm] = useState(false)
@@ -23,9 +23,8 @@ const ReviewCard = ({id, campsite, title, date, content, image, setReviews}) => 
     
     return(
             <div className="reviewBox">
-                {showForm ? <ReviewEditForm id={id} campsite={campsite} title={title} date={date} content={content} image={image} setReviews={setReviews} handleClick={handleClick} />:(
+                {showForm ? <ReviewEditForm id={id} title={title} date={date} content={content} image={image} setReviews={setReviews} handleClick={handleClick} />:(
                     <div className="reviewCard">
-                     {campsite} :
                      {title} :
                      {date} :
                      {content} :

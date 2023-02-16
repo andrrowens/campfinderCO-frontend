@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/authenticated_user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

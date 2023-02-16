@@ -16,6 +16,7 @@ import Notification from './Notification';
 // import { UserContext } from './UserContext';
 import Login from './Login';
 import Signup from './Signup';
+import AuthenticatedUser from './AuthenticatedUser';
 
 
 function App() {
@@ -110,7 +111,7 @@ useEffect(() => { // fetch reviews
             </Route>
 
             <Route path="/authenticated_user">
-              {/* { <AuthenticatedUser /> } */}
+               <AuthenticatedUser /> 
             </Route>
 
           </Switch>

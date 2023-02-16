@@ -4,7 +4,6 @@ import { useState } from 'react';
 const ReviewForm = ({ setMessage, setReviews }) => {
 
     const [newReview, setNewReview] = useState({
-        campsite: "",
         title: "",
         date: "",
         content: "",
@@ -42,7 +41,6 @@ const ReviewForm = ({ setMessage, setReviews }) => {
         
             .catch(error => alert(error))
             setNewReview({
-                campsite: "",
                 title: "",
                 date: "",
                 content: "",
@@ -54,10 +52,6 @@ const ReviewForm = ({ setMessage, setReviews }) => {
         <div>
             <form className="form" onSubmit={handleSubmit}>
                 <h2 className="form-title"> &#127957; Create your Review &#127957;</h2>
-                <div>
-                    <input className="user-input" type="text" name="campsite" placeholder='Campsite:' onChange={handleChange} value={newReview.campsite} required />
-                </div>
-
                 <div>
                     <input className="user-input" type="text" name="title" placeholder='Title:' onChange={handleChange} value={newReview.title} required />
                 </div>
