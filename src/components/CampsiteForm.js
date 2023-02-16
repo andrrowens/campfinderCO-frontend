@@ -20,7 +20,7 @@ const CampsiteForm = ({ setCampsites, setMessage }) => {
 
 const handleSubmit = (e) => {
     e.preventDefault()
-        fetch("http://localhost:4000/campsites", {
+        fetch("campsites", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json"

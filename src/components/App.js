@@ -24,6 +24,7 @@ function App() {
 const [campsites, setCampsites] = useState([])
 const [reviews, setReviews]= useState([])
 const [message, setMessage]= useState("")
+const [logout, setLogout] = useState(null)
 // const {fetchCurrentUser, user, setUser} = useContext(userContext)
 
 // const [user, setUser] = useState(null);
@@ -86,7 +87,7 @@ useEffect(() => { // fetch reviews
     <div className="App">
       <Notification message={message} setMessage={setMessage} />
 
-       <Navbar />
+       <Navbar logout={logout} setLogout={setLogout}/>
         <Header/>
           <Switch>
 

@@ -2,18 +2,34 @@ import React from 'react';
 // import {Link} from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
 
-const Navbar= (updateUser) => {
+const Navbar= (logout, setLogout) => {
 
-  function handleLogout() {
-    fetch("/logout", {
+
+  const handleLogout = () => {
+   fetch("/logout", {
       method: "DELETE",
     })
-    .then(res =>{
-      if(res.ok){
-        updateUser(null)
-      }
-    })
+      .then((r) => {
+        if (r.status === 204) {
+          setLogout(null)
+          alert("You are logged out")
+        } else {
+          r.json()
+          .then(err => alert(err))
+        }
+      })
   }
+
+  // function handleLogout() {
+  //   fetch("/logout", {
+  //     method: "DELETE",
+  //   })
+  //   .then(res =>{
+  //     if(res.ok){
+  //       updateUser(null)
+  //     }
+  //   })
+  // }
 
     return (
     <nav className="nav">
@@ -27,6 +43,8 @@ const Navbar= (updateUser) => {
         <NavLink activeStyle={{ color: "green" }} to="/signup" className="nav-link">Sign Up</NavLink>
 
         <NavLink activeStyle={{ color: "green" }} to="/login" className="nav-link">Login</NavLink>
+
+        {/* <NavLink activeStyle={{ color: "green" }} to="/authenticated_user" className="nav-link">Login</NavLink> */}
      
         {/* <NavLink activeStyle={{ color: "green" }} to="/logout" className="nav-link">Logout</NavLink> */}
 
