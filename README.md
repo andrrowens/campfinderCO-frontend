@@ -1,18 +1,70 @@
-# Getting Started with Create React App
+# Getting Started With CampFinderCO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CampFinderCO was created to allow campers from Colorado and around the country to discover, submit, and review dispersed or backcounty campsites. Feel free to check it out and let us know what you think!
 
-## Available Scripts
+The following steps are to set up and get started with the front-end of the project.
 
-In the project directory, you can run:
+## Git Clone:
 
-### `npm start`
+To start you'll need to have Mac vers or WSL2 set up.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Go to the following URL: https://github.com/andrrowens/phase-4-project-frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Next, click on Fork button at the top right of your screen.
+
+![ForkBtn](https://www.earthdatascience.org/images/earth-analytics/git-version-control/githubguides-bootcamp-fork.png)
+
+Next, click on Create Fork
+
+![](https://github.com/jccaropino7786/legendary-phase1-project/blob/main/images%20and%20gifs/create%20fork.PNG?raw=true)
+
+Next, click on the green <>Code button. A dropdown should appear. 
+
+Make sure to select Local and SSH as shown in the image below and then click the button with two overlapping boxes located in the center-right of the screen. This will copy the SSH key for you.
+
+![](https://i.imgur.com/EH3a3m8.png)
+
+Next, open up your terminal and navigate to the directory where you would like to clone CampFinderCO.
+
+Then type: 
+
+> git clone
+
+Then paste the copied SSH key from GitHub by right clicking or pressing command + v (Mac users) or ctrl + v (Windows users).
+
+Once the SSH key is pasted press enter.
+
+Then type:
+
+> ls
+
+Find the file "phase-4-project-frontend"
+
+Then navigate into the project directory typing:
+
+> cd phase-4-project-frontend
+
+
+Then type:
+
+> code .
+
+This will open up the project repository in VSCode.
+
+
+You'll need to install the dependency (library) for our front-end React application inside of a terminal that's opened within VSCode.
+
+To do this type:
+
+ > npm install
+
+ This step may take up to a few minutes.
+
+ Once that's complete, type:
+
+ > npm start
+
+After running npm start the homepage should open up in your browser!
 
 ### `npm test`
 

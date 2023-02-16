@@ -50,6 +50,17 @@
   width: 100%;
 }
 
+.nav-link {
+  color: whitesmoke;
+  font-size: 16px;
+  font-style: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.logout-btn {
+  margin-right: 1em;
+}
+
 .header {
   background-image: url("https://i.imgur.com/RoipUnQ.jpg");
   height: 100%;

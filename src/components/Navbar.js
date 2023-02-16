@@ -1,8 +1,11 @@
 import React from 'react';
 // import {Link} from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
-const Navbar= (logout, setLogout) => {
+const Navbar= () => {
+  const { setUsers } = useContext(UserContext)
 
 
   const handleLogout = () => {
@@ -11,7 +14,7 @@ const Navbar= (logout, setLogout) => {
     })
       .then((r) => {
         if (r.status === 204) {
-          setLogout(null)
+          setUsers(null)
           alert("You are logged out")
         } else {
           r.json()
@@ -46,9 +49,9 @@ const Navbar= (logout, setLogout) => {
 
         <NavLink activeStyle={{ color: "green" }} to="/authenticated_user" className="nav-link">Login</NavLink>
      
-        <NavLink activeStyle={{ color: "green" }} to="/logout" className="nav-link">Logout</NavLink>
+        {/* <NavLink activeStyle={{ color: "green" }} to="/logout" className="nav-link">Logout</NavLink> */}
 
-        <header> <button onClick={handleLogout}>Logout</button> </header>
+        <header className="logout-btn"> <button onClick={handleLogout}>Logout</button> </header>
      
     </nav>
     );

@@ -1,26 +1,38 @@
-import React from 'react'
-import { useState } from 'react'
+import React, {useState, useContext } from 'react'
+import {useHistory} from 'react-router-dom'
+import { UserContext } from '../context/UserContext'
 
- const Login = ({onLogin}) => {
+ const Login = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const history = useHistory()
+    const {setUsers} = useContext(UserContext)
+    const [errors, setErrors] = useState([])
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/authenticated_user", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username }),
+      body: JSON.stringify({ username, password }),
     })
-      .then((r) => r.json())
-      .then((user) => onLogin(user));
+    .then(res => {
+      if(res.status === 200){
+          res.json().then(user => {
+              setUsers(user)
+              history.push(`/users/${user.id}`)
+          })
+      }else {
+          res.json().then(json => setErrors(Object.entries(json.errors)))
+      }
+  })
 }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
     <input
       type="text"
       placeholder="Username"
