@@ -27,7 +27,7 @@ const ReviewEditForm = ({ id, title, date, content, image, setReviews, handleCli
             
         })
         .then(response => {
-            if(response.status ===200) {
+            if(response.status ===202) {
                 response.json()
                 .then(review => {
 
