@@ -1,12 +1,12 @@
 import React from 'react';
 // import {Link} from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
+// import { useState } from 'react'
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 
 const Navbar= () => {
   const { setUsers } = useContext(UserContext)
-
 
   const handleLogout = () => {
    fetch("/logout", {
@@ -23,17 +23,6 @@ const Navbar= () => {
       })
   }
 
-  // function handleLogout() {
-  //   fetch("/logout", {
-  //     method: "DELETE",
-  //   })
-  //   .then(res =>{
-  //     if(res.ok){
-  //       updateUser(null)
-  //     }
-  //   })
-  // }
-
     return (
     <nav className="nav">
   
@@ -45,16 +34,17 @@ const Navbar= () => {
 
         <NavLink activeStyle={{ color: "green" }} to="/signup" className="nav-link">Sign Up</NavLink>
 
-        {/* <NavLink activeStyle={{ color: "green" }} to="/login" className="nav-link">Login</NavLink> */}
-
         <NavLink activeStyle={{ color: "green" }} to="/authenticated_user" className="nav-link">Login</NavLink>
      
-        {/* <NavLink activeStyle={{ color: "green" }} to="/logout" className="nav-link">Logout</NavLink> */}
+        {/* <div>
+          { showLogout ? null : (<button onClick={handleShowLogout}>Logout</button>) }
+        </div>  */}
+
+          {/* { logout ? null : (<div className="logout-btn"> <button onClick={handleLogout}>Logout</button> </div>) } */}
 
         <header className="logout-btn"> <button onClick={handleLogout}>Logout</button> </header>
-     
     </nav>
-    );
-  }
+    )
+}
 
 export default Navbar
