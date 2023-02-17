@@ -1,17 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
 
-const ReviewForm = ({ setMessage, setReviews }) => {
+const ReviewForm = ({ campsites, setReviews, setMessage }) => {
 
     const [newReview, setNewReview] = useState({
         title: "",
         date: "",
         content: "",
-        image: ""
+        image: "",
+        campsite_id: "" 
     })
 
     const handleChange = (e) => {
-        setNewReview({...newReview, [e.target.name]: e.target.value})
+        setNewReview(currentReview => ({...currentReview, [e.target.name]: e.target.value}))
     }
 
     const handleSubmit = (e) => {
@@ -24,27 +25,26 @@ const ReviewForm = ({ setMessage, setReviews }) => {
                 body: JSON.stringify(newReview)
             })
             .then(response => {
+                console.log("fetch")
                 if(response.status===201){
                     response.json()
                     .then(review => {
-                        setReviews(currentReviews => [...currentReviews, newReview])
-                        // setMessage("Thanks for submitting!")
+                        console.log(review)
+                        setReviews(currentReview => [...currentReview, review])
+                        setNewReview({
+                            title: "",
+                            date: "",
+                            content: "",
+                            image: "",
+                            campsite_id: ""
+                        })
                     } )
                 } else {
                     response.json()
-                    .then(messageObj => setMessage(messageObj.message))
-                }
-               
-                
+                    .then(errorObj => setMessage(errorObj.error))
+                }    
             })
-        
             .catch(error => alert(error))
-            setNewReview({
-                title: "",
-                date: "",
-                content: "",
-                image: ""
-            })
     }
 
     return (
@@ -65,6 +65,13 @@ const ReviewForm = ({ setMessage, setReviews }) => {
 
                 <div>
                     <input className="user-input" type="text" name="image" placeholder='Image URL:' onChange={handleChange} value={newReview.image} required />
+                </div>
+
+                <div>
+                    <select className="user-input" name="campsite_id" onChange={handleChange} value={newReview.campsite_id} required>
+                        <option value=""> Select Campsite </option>
+                        {campsites.map(campsite => <option value={campsite.id}>{campsite.name}</option>)}
+                    </select>
                 </div>
 
                 <input className="submit-btn" type="submit" value="Submit Review" />

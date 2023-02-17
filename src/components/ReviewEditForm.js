@@ -41,7 +41,7 @@ const ReviewEditForm = ({ id, title, date, content, image, setReviews, handleCli
                 })
             } else {
                 response.json()
-                .then(error => alert(error))
+                .then(error => alert(error.error))
             }
         })
         .catch(error => alert(error))

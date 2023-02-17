@@ -96,7 +96,7 @@ useEffect(() => { // fetch reviews
             </Route >
 
             <Route path="/reviews">
-              <ReviewForm setMessage={setMessage} setReviews={setReviews} />
+              <ReviewForm setMessage={setMessage} campsites={campsites} setReviews={setReviews} />
               <ReviewContainer setMessage={setMessage} reviews={reviews} setReviews={setReviews} />
               {/* <ReviewEditForm reviews={reviews} setReviews={setReviews} />
               <ReviewDelete reviews={reviews} setReviews={setReviews} /> */}
@@ -106,9 +106,9 @@ useEffect(() => { // fetch reviews
                 <Signup />
             </Route>
 
-            <Route path="/logout">
+            {/* <Route path="/logout">
                 <Navbar /> 
-            </Route>
+            </Route> */}
 
             <Route path="/authenticated_user">
                <AuthenticatedUser /> 

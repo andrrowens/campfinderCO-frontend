@@ -17,7 +17,7 @@ const ReviewCard = ({id, title, date, content, image, setReviews}) => {
         {
             method: "DELETE"
         })
-        setReviews(currentReviews => currentReviews.filter(element => element.id !== id))
+        .then(() => setReviews(currentReviews => currentReviews.filter(element => element.id !== id)))
     }
 
     
@@ -29,7 +29,7 @@ const ReviewCard = ({id, title, date, content, image, setReviews}) => {
                      <strong>Date: </strong>{date} <br/>
                      <strong>Content: </strong>{content} <br/>
                      {/* <strong>Image: </strong>{image} <br/> */}
-                     <img className="campsite-image" src={image} alt={""}></img> <br/>
+                     <img className="campsite-image" src={image} alt={""}/> <br/>
                             <button className="form-btn" onClick={handleDeleteReview}> 
                                 DELETE &#10006;
                             </button>
