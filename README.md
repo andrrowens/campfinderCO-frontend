@@ -1,8 +1,8 @@
-# Getting Started With CampFinderCO
+# Getting Started With CampFinderCO (Frontend)
 
 CampFinderCO was created to allow campers from Colorado and around the country to discover, submit, and review dispersed or backcounty campsites. Feel free to check it out and let me know what you think!
 
-The following steps are to set up and get started with the front-end of the project.
+The following steps are to set up and get started with the frontend of the project.
 
 ## Git Clone:
 
