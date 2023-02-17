@@ -4,7 +4,7 @@ import { useState } from 'react';
 const CampsiteForm = ({ setCampsites, setMessage }) => {
 
   const [newCampsite, setNewCampsite] = useState({
-    name : "",
+    name: "",
     region: "",
     description: "",
     elevation: "",

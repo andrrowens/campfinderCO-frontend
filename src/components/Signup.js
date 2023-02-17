@@ -33,8 +33,9 @@ const SignUp = ({updateUser}) => {
                 res.json().then(user => {
                     setUsers(user)
                     history.push(`/users/${user.id}`)
+                    alert("Successfully signed up")
                 })
-            }else {
+            } else {
                 res.json().then(json => setErrors(Object.entries(json.errors)))
             }
         })

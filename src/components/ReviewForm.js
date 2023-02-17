@@ -28,9 +28,8 @@ const ReviewForm = ({ setMessage, setReviews }) => {
                     response.json()
                     .then(review => {
                         setReviews(currentReviews => [...currentReviews, newReview])
-                        setMessage("Thanks for submitting!")
+                        // setMessage("Thanks for submitting!")
                     } )
-                
                 } else {
                     response.json()
                     .then(messageObj => setMessage(messageObj.message))
@@ -48,7 +47,7 @@ const ReviewForm = ({ setMessage, setReviews }) => {
             })
     }
 
-    return(
+    return (
         <div>
             <form className="form" onSubmit={handleSubmit}>
                 <h2 className="form-title"> &#127957; Create your Review &#127957;</h2>
@@ -72,7 +71,6 @@ const ReviewForm = ({ setMessage, setReviews }) => {
             </form>
         </div>
     )
-    
 }
 
 

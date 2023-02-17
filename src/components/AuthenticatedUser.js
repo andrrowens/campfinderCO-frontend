@@ -24,6 +24,7 @@ const handleSubmit = (e) => {
           res.json().then(user => {
               setUsers(user)
               history.push(`/users/${user.id}`)
+              alert("Successfully logged in")
           })
       }else {
           res.json().then(json => setErrors(Object.entries(json.errors)))
@@ -41,7 +42,7 @@ const handleSubmit = (e) => {
     /> 
     <br />
     <input
-      type="text"
+      type="password"
       placeholder="Password"
       value={password}
       onChange={(e) => setPassword(e.target.value)}
