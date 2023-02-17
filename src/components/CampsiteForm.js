@@ -70,7 +70,7 @@ const handleSubmit = (e) => {
           </div>
 
           <div>
-              <input className="user-input" type="text" name="elevation" placeholder='Elevation:' onChange={handleChange} value={newCampsite.elevation} required/>
+              <input className="user-input" type="text" name="elevation" placeholder='Elevation (ft):' onChange={handleChange} value={newCampsite.elevation} required/>
           </div>
 
           <div>
