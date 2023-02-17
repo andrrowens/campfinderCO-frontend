@@ -49,11 +49,11 @@ const ReviewEditForm = ({ id, title, date, content, image, setReviews, handleCli
     }
 
     return(
-        <form onSubmit={handleEditReview}>
-            <input className="user-input" placeholder="Title" type="text" name="title" value={editReview.title} onChange={handleChange} /> 
-            <input className="user-input" placeholder="Date" type="text" name="date" value={editReview.date} onChange={handleChange} /> 
-            <input className="user-input" placeholder="Content" type="text" name="content" value={editReview.content} onChange={handleChange} /> 
-            <input className="user-input" placeholder="Image" type="text" name="image" value={editReview.image} onChange={handleChange} /> 
+        <form className="form" onSubmit={handleEditReview}>
+            <input className="user-input" placeholder="Title" type="text" name="title" value={editReview.title} onChange={handleChange} /> <br/> 
+            <input className="user-input" placeholder="Date" type="text" name="date" value={editReview.date} onChange={handleChange} /> <br/> 
+            <input className="user-input" placeholder="Content" type="text" name="content" value={editReview.content} onChange={handleChange} /> <br/> 
+            <input className="user-input" placeholder="Image" type="text" name="image" value={editReview.image} onChange={handleChange} /> <br/> 
             <input className="rev-btn" type="submit" value="Update Review" />
         </form>
     )

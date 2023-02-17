@@ -98,7 +98,7 @@
   padding: 0.5erm;
   font-style: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  padding: 1em
+  padding: 0em
   
 }
 
@@ -120,7 +120,8 @@
 }
 
 .form {
-  background-color: #696969;
+  background-image: url("https://i.imgur.com/FXoQM6u.jpg");
+  border-top: 3px solid;
 }
 
 .form-btn {
@@ -210,6 +211,34 @@
 
 .submit-btn {
   margin: 1em;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  font-size: 1.0em;
+  font-weight: bold;   
+}
+
+.user-input {
+  width: 50%;
+}
+
+.user-auth {
+  width: 30%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0.5em;
+}
+
+.auth-btn {
+  margin: 1em;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  font-size: 1.0em;
+  font-weight: bold;  
+}
+
+.signup-form {
+
 }
 
 

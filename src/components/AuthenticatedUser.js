@@ -35,6 +35,7 @@ const handleSubmit = (e) => {
   return (
     <form className="login-form" onSubmit={handleSubmit}>
     <input
+      className="user-auth"
       type="text"
       placeholder="Username"
       value={username}
@@ -42,13 +43,14 @@ const handleSubmit = (e) => {
     /> 
     <br />
     <input
+      className="user-auth"
       type="password"
       placeholder="Password"
       value={password}
       onChange={(e) => setPassword(e.target.value)}
     />
     <br />
-    <button type="submit">Login</button>
+    <button className="auth-btn" type="submit">Login</button>
   </form>
   );
 };

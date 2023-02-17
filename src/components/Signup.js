@@ -48,24 +48,24 @@ const SignUp = ({updateUser}) => {
       }
     return (
         <> 
-        <form onSubmit={onSubmit}>
+        <form className="signup-form" onSubmit={onSubmit}>
         <label>
           Username
           </label>  
-          <input type='text' name='username' value={formData.username} onChange={handleChange} />
+          <input className="user-auth" type='text' name='username' value={formData.username} onChange={handleChange} />
         < br />
         <label>
          Email
          </label>
-        <input type='text' name='email' value={formData.email} onChange={handleChange} />
+        <input className="user-auth" type='text' name='email' value={formData.email} onChange={handleChange} />
         < br />
         <label>
          Password
          </label>
-        <input type='password' name='password' value={formData.password} onChange={handleChange} />
+        <input className="user-auth" type='password' name='password' value={formData.password} onChange={handleChange} />
         < br />
     
-        <input type='submit' value='Sign Up Today!' />
+        <input className="auth-btn" type='submit' value='Sign Up Today!' />
         </form>
         {/* {errors?errors.map(e => <Errors>{e}</Errors>):null} */}
         </>
