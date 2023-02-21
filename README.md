@@ -94,3 +94,4 @@ I hope you enjoy exploring CampFinder and look forward to any feedback you may h
 
 Cheers!
 
+License: This project is licensed under the MIT license
